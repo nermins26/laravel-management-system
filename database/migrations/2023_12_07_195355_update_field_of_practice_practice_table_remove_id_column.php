@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('practices', function (Blueprint $table) {
-            $table->uuid('id')->primary()->first();
-            $table->string('name');
-            $table->string('email')->nullable();
-            $table->string('website_url')->nullable();
-            $table->timestamps();
+        Schema::table('field_of_practice_practice', function (Blueprint $table) {
+            $table->dropColumn('id');
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('practices');
+        Schema::table('field_of_practice_practice', function (Blueprint $table) {
+            $table->uuid('id')->first()->primary();
+        });
     }
 };

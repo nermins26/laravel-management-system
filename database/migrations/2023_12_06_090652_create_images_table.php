@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->uuid('id')->primary()->first();
             $table->string('url');
-            $table->integer('size');
-            $table->string('alt');
-            $table->string('extension');
-            $table->string('description');
+            $table->integer('size')->nullable();
+            $table->string('alt')->nullable();
+            $table->string('extension')->nullable();
+            $table->string('description')->nullable();
             $table->string('imageable_id');
             $table->string('imageable_type');
             $table->timestamps();

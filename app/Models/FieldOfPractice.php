@@ -3,12 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use App\Traits\UsesUuid;
 
-class FieldOfPractice extends Model
+class FieldOfPractice extends BaseModel
 {
-    use HasFactory, UsesUuid;
+    use HasFactory;
 
     protected $fillable = [
         'name'
@@ -16,6 +14,6 @@ class FieldOfPractice extends Model
 
     public function practices()
     {
-        return $this->belongsToMany(Practice::class, 'practice_field');
+        return $this->belongsToMany(Practice::class, 'field_of_practice_practice');
     }
 }

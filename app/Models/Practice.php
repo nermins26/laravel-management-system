@@ -2,13 +2,11 @@
 
 namespace App\Models;
 
-use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class Practice extends Model
+class Practice extends BaseModel
 {
-    use HasFactory, UsesUuid;
+    use HasFactory;
 
     protected $fillable = [
        'name',
@@ -23,7 +21,7 @@ class Practice extends Model
 
     public function fieldsOfPractice()
     {
-        return $this->belongsToMany(FieldOfPractice::class, 'practice_field');
+        return $this->belongsToMany(FieldOfPractice::class, 'field_of_practice_practice');
     }
 
     public function images()

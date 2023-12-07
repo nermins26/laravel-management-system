@@ -3,12 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use App\Traits\UsesUuid;
 
-class Image extends Model
+class Image extends BaseModel
 {
-    use HasFactory, UsesUuid;
+    use HasFactory;
 
     protected $fillable = [
         'url',
