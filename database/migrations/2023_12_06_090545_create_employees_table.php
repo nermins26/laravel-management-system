@@ -15,8 +15,8 @@ return new class extends Migration
             $table->uuid('id')->primary()->first();
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('email');
-            $table->string('phone');
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
             $table->foreignUuid('practice_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
