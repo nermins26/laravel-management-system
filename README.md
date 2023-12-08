@@ -26,6 +26,8 @@ cd repository
 
 Replace https://github.com/your/repository.git with your repository URL.
 
+<p><strong>NOTE: <strong>If you don't have an access rights to this repo, you can still download it as zip instead of cloning it. After extracting project files, remaining instructions are the same.</p>
+
 ### 2. Install Dependencies
 
 <p>Install the required PHP and Node.js dependencies:</p>
@@ -38,7 +40,7 @@ npm run dev
 
 ### 3. Environment variables
 
-<p>Edit the .env file to set your environment variables, especially the database settings. Make sure to specify PostgreSQL as your database. First create a .env file in your root and then add database envs:</p>
+<p>Edit the .env file to set your environment variables, especially the database settings. Make sure to specify PostgreSQL as your database. First create a .env file in your root, copy everything from .env.example file and then add/update database envs:</p>
 
 ```php
 DB_CONNECTION=pgsql
@@ -72,3 +74,5 @@ php artisan serve
 ```
 
 <p>Your application will be running at http://localhost:8000.</p>
+
+<p>NOTE: In order to run the application, it is needed to run the both servers, PHP and NodeJS (for auth services), so please use two separate terminals, one for PHP server (php artisan serve) and second for NodeJS (npm run dev)</p>
