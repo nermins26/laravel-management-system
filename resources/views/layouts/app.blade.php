@@ -3,7 +3,9 @@
 <!-- END OF HEAD SECTION -->
 
 <!-- CONTENT SECTION -->
+@auth
 @yield('content')
+@endauth
 <!-- END OF CONTENT SECTION -->
 
 <!-- FOOTER SECTION -->

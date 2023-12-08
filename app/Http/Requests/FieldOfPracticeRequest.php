@@ -11,7 +11,7 @@ class FieldOfPracticeRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true; //change to false when auth is implemented
+        return auth()->check();
     }
 
     /**
