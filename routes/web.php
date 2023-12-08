@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\FieldOfPracticeController;
 use App\Http\Controllers\PracticeController;
@@ -16,12 +17,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// home public
 Route::get('/', function () {
     return view('home');
 });
 
-Route::resources([
-    'practices' => PracticeController::class,
-    'employees' => EmployeeController::class,
-    'fields-of-practice' => FieldOfPracticeController::class,
-]);
+// admin routes
+Route::middleware('auth')->group(function () {
+    Route::resources([
+        'practices' => PracticeController::class,
+        'employees' => EmployeeController::class,
+        'fields-of-practice' => FieldOfPracticeController::class,
+    ]);
+});
+
+
+require __DIR__.'/auth.php';

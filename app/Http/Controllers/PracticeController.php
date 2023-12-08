@@ -79,4 +79,13 @@ class PracticeController extends Controller
         $this->practiceService->deletePractice($id);
         return redirect()->route('practices.index');
     }
+
+    /**
+     * Public api endpoint for all practices
+     */
+    public function indexJson()
+    {
+        $practices = $this->practiceService->getAllpractices();
+        return response()->json($practices);
+    }
 }
